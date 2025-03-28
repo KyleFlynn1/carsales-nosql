@@ -32,9 +32,10 @@ export class CarlistComponent {
     let addCar:ICar;
     addCar=new NewCar(make,model,year,imageUrl);
     this._carAPIService.addCarDetails(addCar).subscribe(carsData =>
-      { this.carsData = carsData}
+      { this.carsData = carsData
+        this.getCars()
+      }
     );
-    this.getCars()
     return false;
   }
 
